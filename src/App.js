@@ -1,14 +1,12 @@
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          TodoList
-        </p>
+        <div className="header">Todo List</div>
+        <div className="input_area">입력 영역</div>
+        <div className="list_area">리스트 영역</div>
       </header>
     </div>
   );
