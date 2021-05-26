@@ -35,12 +35,12 @@ class App extends React.Component{
       todoList.push({title: title.trim(), content: content.trim(), startDate, startTime, endDate, endTime});
       this.setState({ 
         todoList,
-        // title: "",
-        // content: "",
-        // startDate: null,
-        // startTime: null,
-        // endDate: null,
-        // endTime: null,
+        title: "",
+        content: "",
+        startDate: null,
+        startTime: null,
+        endDate: null,
+        endTime: null,
       });
     }else{
       alert("입력값을 확인해 주세요.");
