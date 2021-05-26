@@ -29,19 +29,47 @@ class App extends React.Component{
     return true
   }
 
+  checkValidateDate(){
+    const {
+      startDate, endDate
+    } = this.state;
+    if((!startDate.isAfter(endDate))) {
+      return false
+    }
+    return true
+  }
+
+  checkValidateTime() {
+    const {
+      startDate, endDate, startTime, endTime
+    } = this.state;
+    if(startDate.isSame(endDate)) {
+      if(!startTime.isAfter(endTime)) {
+        return false
+      }
+    }
+    return true
+  }
+
   saveTodoList(){
     if(this.checkValidate()){
-      const { todoList, title, content, startDate, startTime, endDate, endTime } = this.state;
-      todoList.push({title: title.trim(), content: content.trim(), startDate, startTime, endDate, endTime});
-      this.setState({ 
-        todoList,
-        title: "",
-        content: "",
-        startDate: null,
-        startTime: null,
-        endDate: null,
-        endTime: null,
-      });
+      if(this.checkValidateDate()) {
+        alert("입력하신 날짜를 확인해주세요.")
+      } else if(this.checkValidateTime()) {
+        alert("입력하신 시간을 확인해주세요.")
+      } else{
+        const { todoList, title, content, startDate, startTime, endDate, endTime } = this.state;
+        todoList.push({title: title.trim(), content: content.trim(), startDate, startTime, endDate, endTime});
+        this.setState({ 
+          todoList,
+          title: "",
+          content: "",
+          startDate: null,
+          startTime: null,
+          endDate: null,
+          endTime: null,
+        });
+      }
     }else{
       alert("입력값을 확인해 주세요.");
     }
