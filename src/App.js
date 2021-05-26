@@ -27,7 +27,8 @@ class App extends React.Component {
             format="yyyy/MM/DD"
             margin="normal"
             label="시작 예정일"
-            onChange={(value)=>console.log(value)}
+            onChange={(value)=>this.setState({startDate: value})}
+            value={this.state.startDate}
             style={{width: '50%'}}
             KeyboardButtonProps={{
               'aria-label': 'change date',
@@ -37,7 +38,8 @@ class App extends React.Component {
             margin="normal"
             label="시작시간"
             variant="inline"
-            onChange={(value)=>console.log(value)}
+            onChange={(value)=> this.setState({startTime: value})}
+            value={this.state.startTime}
             style={{width: '50'}}
             KeyboardButtonProps={{
               'aria-label': 'change date',
