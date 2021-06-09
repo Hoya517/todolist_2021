@@ -8,7 +8,7 @@ import reportWebVitals from './reportWebVitals';
 import { MuiPickersUtilsProvider } from '@material-ui/pickers';
 import MomentUtils from '@date-io/moment';
 import "moment/locale/ko";
-import Welcome from './AppFunc';
+// import Welcome from './AppFunc';
 
 ReactDOM.render(
   <MuiPickersUtilsProvider utils={MomentUtils}>
